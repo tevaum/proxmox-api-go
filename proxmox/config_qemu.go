@@ -39,7 +39,7 @@ func (config ConfigQemu) CreateVm(vmr *VmRef, client *Client) (err error) {
 		"name":        config.Name,
 		"ide2":        config.QemuIso + ",media=cdrom",
 		"ostype":      config.QemuOs,
-		"virtio0":     config.Storage + ":" + strconv.FormatFloat(config.DiskSize, 'f', -1, 64),
+		"scsi0":     config.Storage + ":" + strconv.FormatFloat(config.DiskSize, 'f', -1, 64),
 		"sockets":     strconv.Itoa(config.QemuSockets),
 		"cores":       strconv.Itoa(config.QemuCores),
 		"cpu":         "host",
